@@ -1,0 +1,4 @@
+Filters: or and true false union like = > < ; -- /* */ admin
+ad'||'min'
+SELECT username, password FROM users WHERE username='2' AND password='1'
+join?
