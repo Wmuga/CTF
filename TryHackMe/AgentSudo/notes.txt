@@ -1,0 +1,21 @@
+Nmap:
+21 - ftp
+22 - ssh
+80 - http
+
+Gobuster scan
+/.htpasswd            (Status: 403) [Size: 278]
+/.hta                 (Status: 403) [Size: 278]
+/.htaccess            (Status: 403) [Size: 278]
+/index.php            (Status: 200) [Size: 218]
+/server-status        (Status: 403) [Size: 278]
+
+Using user agent R - nothing
+C - "chris
+Do you still remember our deal? Please tell agent J about the stuff ASAP. Also, change your god damn password, is weak!"
+
+Ncrack ftp - chris crystal
+
+extracted pics and note, that passw is hidden
+
+cutie contains zip archive

